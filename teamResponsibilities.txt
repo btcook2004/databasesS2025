@@ -1,0 +1,6 @@
+BrandonC: Install and Set up database
+Griffin: Create Schema
+Griffin + BrandonC: Get data into csv file
+BrandonC: Insert Data into database instance
+BrandonS + Jillian: Set up Flask and Python
+BrandonS + Jillian: Create Web functionality

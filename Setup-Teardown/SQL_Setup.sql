@@ -4,37 +4,40 @@ CREATE TABLE Artist(
   PRIMARY KEY (ArtistName)
 );
 
-CREATE TABLE Song(
-  SongId int AUTO_INCREMENT,
-  SongTitle varchar(255),
-  ArtistName varchar(255),
-  AlbumTitle varchar(255),
-  FeaturedArtist varchar(255),
-  Rating int,
-  Time int,
-  PRIMARY KEY(SongId),
-  FOREIGN KEY(ArtistName) REFERENCES Artist(ArtistName)
-);
-
 CREATE TABLE Album(
+  AlbumId int AUTO_INCREMENT,
   AlbumName varchar(255),
   ArtistName varchar(255),
   NumSong int,
   Rating int,
   ReleaseYear int,
   PlayTime int,
-  PRIMARY KEY (AlbumName),
+  PRIMARY KEY (AlbumId),
   FOREIGN KEY(ArtistName) REFERENCES Artist(ArtistName)
 );
 
+CREATE TABLE Song(
+  SongId int AUTO_INCREMENT,
+  SongTitle varchar(255),
+  ArtistName varchar(255),
+  AlbumId int,
+  FeaturedArtist varchar(255),
+  Rating int,
+  Time int,
+  PRIMARY KEY(SongId),
+  FOREIGN KEY(ArtistName) REFERENCES Artist(ArtistName),
+  FOREIGN KEY(FeaturedArtist) REFERENCES Artist(ArtistName),
+  FOREIGN KEY(AlbumId) REFERENCES Album(AlbumId)
+);
+
 CREATE TABLE Genre(
-  GenreId int,
+  GenreId int AUTO_INCREMENT,
   GenreName varchar(255),
-  AlbumName varchar(255),
+  AlbumId int,
   ArtistName varchar(255),
   SongId int,
   PRIMARY KEY (GenreId),
-  FOREIGN KEY(AlbumName) REFERENCES Album(AlbumName),
+  FOREIGN KEY(AlbumId) REFERENCES Album(AlbumId),
   FOREIGN KEY(ArtistName) REFERENCES Artist(ArtistName),
   FOREIGN KEY(SongId) REFERENCES Song(SongId)
 );

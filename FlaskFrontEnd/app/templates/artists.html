@@ -28,19 +28,41 @@
         <a href="/artists">Artists</a> |
         <a href="/genres">Genres</a>
     </nav>
-    <h1>Artist List</h1>
+    <h1>Artists</h1>
 
-    <button>Create</button>
-    <button>Read</button>
-    <button>Update</button>
-    <button>Delete</button>
+    <form action="/create_artist" method="POST">
+        <strong>CREATE</strong>
+        <label for="artistName">Artist Name:</label>
+        <input type="text" id="artistName" name="artistName" required>
+        <label for="artistRating">Artist Rating:</label>
+        <input type="number" id="artistRating" name="artistRating" required>
+        <button type="submit">Create</button>
+        <br><br>  
+    </form>
+
+    <form action="/update_artist" method="POST"">
+        <strong>UPDATE</strong>
+        <label for="artistName"> Artist Name: </label>
+        <input type="text" id="artistName" name="artistName" required>
+        <label for="artistRating"> Artist Rating: </label>
+        <input type="number" id="artistRating" name="artistRating" required>
+        <button type="submit">Update</button>
+        <br><br>
+    </form>
+
+    <form action="/delete_artist" method="POST">
+        <strong>DELETE</strong>
+        <label for="artistName">Artist Name:</label>
+        <input type="text" id="artistName" name="artistName" required>
+        <button type="submit">Delete</button>
+        <br><br>
+    </form>
 
     <list>
         <li>ArtistName, Rating</li>
             {% for artist in artists %}
                  <li>{{artist}}</li>
             {% endfor %}
-
     </list>
 
     <br><br>

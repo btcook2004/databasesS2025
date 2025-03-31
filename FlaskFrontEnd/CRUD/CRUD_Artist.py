@@ -13,12 +13,6 @@ def CreateArtist(ArtistName, Rating):
     mycursor.execute("INSERT INTO ARTIST (ArtistName, Rating) VALUES (%s, %s)", (ArtistName, Rating))
     # mydb.commit()
     
-# def ReadArtist():
-#     mycursor.execute("SELECT * FROM ARTIST")
-#     myresult = mycursor.fetchall()
-#     for row in myresult:
-#         print(row)
-#     return myresult
 def ReadArtist():
     with mydb.cursor() as cursor:
         cursor.execute("SELECT * FROM ARTIST")

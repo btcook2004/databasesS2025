@@ -42,10 +42,6 @@ def CreateSong(SongTitle, ArtistName, AlbumId, AlbumName, FeaturedArtist, Rating
     mycursor.execute("INSERT INTO SONG (SongTitle, ArtistName, AlbumId, FeaturedArtist, Rating, Time) VALUES (%s, %s, %s, %s, %s, %s)", (SongTitle, ArtistName, AlbumId, FeaturedArtist, Rating, Time))
     mydb.commit()
     
-# def ReadSong():
-#     mycursor.execute("SELECT * FROM SONG")
-#     myresult = mycursor.fetchall()
-#     return myresult
 def ReadSong():
     with mydb.cursor() as cursor:
         cursor.execute("SELECT * FROM SONG")

@@ -30,10 +30,43 @@
     </nav>
     <h1>Genre List</h1>
 
-    <button>Create</button>
-    <button>Read</button>
-    <button>Update</button>
-    <button>Delete</button>
+    <form action="/create_genre" method="POST">
+        <strong>CREATE</strong>
+        <label for="genreName">Genre Name:</label>
+        <input type="text" id="genreName" name="genreName" required>
+        <label for="albumId">Album ID:</label>
+        <input type="number" id="albumId" name="albumId" required>
+        <label for="artistName">Artist Name:</label>
+        <input type="text" id="artistName" name="artistName" required>
+        <label for="songId">Song ID:</label>
+        <input type="number" id="songId" name="songId" required>
+        <button type="submit">Create</button>
+        <br><br>
+    </form>
+
+    <form action="/update_genre" method="POST">
+        <strong>UPDATE</strong>
+        <label for="genreId">Genre ID:</label>
+        <input type="number" id="genreId" name="genreId" required>
+        <label for="genreName">Genre Name:</label>
+        <input type="text" id="genreName" name="genreName" required>
+        <label for="albumId">Album ID:</label>
+        <input type="number" id="albumId" name="albumId" required>
+        <label for="artistName">Artist Name:</label>
+        <input type="text" id="artistName" name="artistName" required>
+        <label for="songId">Song ID:</label>
+        <input type="number" id="songId" name="songId" required>
+        <button type="submit">Update</button>
+        <br><br>
+    </form>
+
+    <form action="/delete_genre" method="POST">
+        <strong>DELETE</strong>
+        <label for="genreId">Genre ID:</label>
+        <input type="number" id="genreId" name="genreId" required>
+        <button type="submit">Delete</button>
+        <br><br>
+    </form>
 
     <list>
         <li>GenreId, GenreName, AlbumId, ArristName, SongId</li>

@@ -34,10 +34,7 @@ def CreateGenre(GenreName, AlbumId, ArtistName, SongId):
     mycursor.execute("INSERT INTO Genre (GenreName, AlbumId, ArtistName, SongId) VALUES (%s, %s, %s, %s)", (GenreName, AlbumId, ArtistName, SongId))
     mydb.commit()
 
-# def ReadGenre():
-#     mycursor.execute("SELECT * FROM Genre")
-#     myresult = mycursor.fetchall()
-#     return myresult
+
 def ReadGenre():
     with mydb.cursor() as cursor:
         cursor.execute("SELECT * FROM GENRE")

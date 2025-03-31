@@ -21,10 +21,6 @@ def CreateAlbum(AlbumName, ArtistName, NumSong, Rating, ReleaseYear, PlayTime):
     mycursor.execute("INSERT INTO ALBUM (AlbumName, ArtistName, NumSong, Rating, ReleaseYear, PlayTime) VALUES (%s, %s, %s, %s, %s, %s)", (AlbumName, ArtistName, NumSong, Rating, ReleaseYear, PlayTime))
     mydb.commit()
 
-# def ReadAlbum():
-#     mycursor.execute("SELECT * FROM ALBUM")
-#     myresult = mycursor.fetchall()
-#     return myresult
 def ReadAlbum():
     with mydb.cursor() as cursor:
         cursor.execute("SELECT * FROM ALBUM")

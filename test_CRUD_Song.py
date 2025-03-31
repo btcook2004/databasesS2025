@@ -1,4 +1,4 @@
-import CRUD.CRUD_Song as CRUD_Song
+import FlaskFrontEnd.CRUD.CRUD_Song as CRUD_Song
 
 option = 'Z'
 print("SONG - CRUD TEST")

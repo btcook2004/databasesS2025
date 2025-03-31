@@ -35,6 +35,14 @@
     <button>Read</button>
     <button>Update</button>
     <button>Delete</button>
+
+    <list>
+        <li>AlbumId, AlbumName, ArtistName, NumSongs, Rating, ReleaseYear, PlayTime</li>
+            {% for album in albums %}
+                 <li>{{album}}</li>
+            {% endfor %}
+
+    </list>
 </body>
 
 </html>

@@ -1,4 +1,4 @@
-import CRUD.CRUD_Artist as CRUD_Artist
+import FlaskFrontEnd.CRUD.CRUD_Artist as CRUD_Artist
 
 option = 'Z'
 print("ARTIST - CRUD TEST")

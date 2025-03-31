@@ -1,4 +1,4 @@
-import CRUD.CRUD_Genre as CRUD_Genre
+import FlaskFrontEnd.CRUD.CRUD_Genre as CRUD_Genre
 
 option = 'Z'
 print("GENRE - CRUD TEST")

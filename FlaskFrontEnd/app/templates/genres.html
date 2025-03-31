@@ -34,6 +34,14 @@
     <button>Read</button>
     <button>Update</button>
     <button>Delete</button>
+
+    <list>
+        <li>GenreId, GenreName, AlbumId, ArristName, SongId</li>
+            {% for genre in genres %}
+                 <li>{{genre}}</li>
+            {% endfor %}
+
+    </list>
     
 </body>
 

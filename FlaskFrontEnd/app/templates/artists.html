@@ -35,6 +35,14 @@
     <button>Update</button>
     <button>Delete</button>
 
+    <list>
+        <li>ArtistName, Rating</li>
+            {% for artist in artists %}
+                 <li>{{artist}}</li>
+            {% endfor %}
+
+    </list>
+
     <br><br>
 
 </body>

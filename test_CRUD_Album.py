@@ -1,4 +1,4 @@
-import CRUD.CRUD_Album as CRUD_Album
+import FlaskFrontEnd.CRUD.CRUD_Album as CRUD_Album
 
 option = 'Z'
 print("ALBUM - CRUD TEST")

@@ -15,7 +15,7 @@ def CreateArtist(ArtistName, Rating):
     
 def ReadArtist():
     with mydb.cursor() as cursor:
-        cursor.execute("SELECT * FROM ARTIST")
+        cursor.execute("SELECT * FROM ARTIST WHERE ArtistName != %s", ("None",))
         myresult = cursor.fetchall()
         return myresult
 

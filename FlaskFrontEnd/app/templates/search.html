@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -17,7 +18,7 @@
             font-weight: bold;
         }
     </style>
-    <title>Home</title>
+    <title>Songs</title>
 </head>
 
 <body>
@@ -29,16 +30,27 @@
         <a href="/genres">Genres</a> |
         <a href="/search">Search</a>
     </nav>
-    <h1>Big CRUD</h1>
 
-    <H1>Big Table</H1>
+    <h1>Search</h1>
+
+
+    <form action="/search" method="POST">
+        <strong>Search</strong>
+        <label for="songTitle">Song Title:</label>
+        <input type="text" id="songTitle" name="songTitle" required>
+        <button type="submit">Search</button>
+        <br><br>
+    </form>
+
     <list>
-        <li>Headings</li>
-            {% for entry in bigTable %}
-                 <li>{{entry}}</li>
+        <li></li>
+            {% for result in results %}
+                 <li>{{result}}</li>
             {% endfor %}
 
     </list>
+
+    <br><br>
 
 </body>
 

@@ -3,13 +3,29 @@ import CRUD.CRUD_Song as CRUD_Song
 import CRUD.CRUD_Album as CRUD_Album
 import CRUD.CRUD_Artist as CRUD_Artist
 import CRUD.CRUD_Genre as CRUD_Genre
+import CRUD.CRUD_Index as CRUD_Index
 app = Flask(__name__)
+searchResults = []
 
 
 @app.route('/')
 def index():
-   return render_template('index.html')
+   # do everything needed to insert a song with album, artist, genre, etc.
+   BigTable = CRUD_Index.ReadBig();
+   return render_template('index.html', bigTable=BigTable)
 
+@app.route('/search', methods=['GET', 'POST'])
+def search():
+   if request.method == 'POST':
+      song_title = request.form['songTitle']
+      global searchResults
+      searchResults = CRUD_Index.SearchBySong(song_title)
+      return redirect('/search_results')
+   return render_template('search.html')
+
+@app.route('/search_results')
+def search_results():
+   return render_template('search.html', results=searchResults)
 
 
 @app.route('/songs')

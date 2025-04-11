@@ -28,6 +28,8 @@
         <a href="/artists">Artists</a> |
         <a href="/genres">Genres</a> |
         <a href="/search">Search</a>
+        <button onclick="location.href='/clearTables'">Clear Tables</button>
+        <button onClick="location.href='/clearAndRemakeTables'">Clear And ReInsert</button>
     </nav>
     <h1>Genre List</h1>
 
@@ -69,13 +71,41 @@
         <br><br>
     </form>
 
-    <list>
+    <div class="table">
+        <table>
+            <head>
+                <tr>
+                    <th>Genre ID</th>
+                    <th>Genre Name</th>
+                    <th>Album ID</th>
+                    <th>Artist Name</th>
+                    <th>Song ID</th>
+                </tr>
+            </head>
+            <tbody>
+                {% for genre in genres %}
+                    <tr>
+                        <td>{{ genre[0] }}</td>
+                        <td>{{ genre[1] }}</td>
+                        <td>{{ genre[2] }}</td>
+                        <td>{{ genre[3] }}</td>
+                        <td>{{ genre[4] }}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+
+
+
+    <!-- <list>
         <li>GenreId, GenreName, AlbumId, ArristName, SongId</li>
             {% for genre in genres %}
                  <li>{{genre}}</li>
             {% endfor %}
 
-    </list>
+    </list> -->
     
 </body>
 

@@ -28,6 +28,8 @@
         <a href="/artists">Artists</a> |
         <a href="/genres">Genres</a> |
         <a href="/search">Search</a>
+        <button onclick="location.href='/clearTables'">Clear Tables</button>
+        <button onClick="location.href='/clearAndRemakeTables'">Clear And ReInsert</button>
     </nav>
     <h1>Artists</h1>
 
@@ -59,6 +61,29 @@
         <br><br>
 
     </form>
+
+    <div class="table">
+        <table>
+            <head>
+                <tr>
+                    <th>Artist Name</th>
+                    <th>Rating</th>
+                </tr>
+            </head>
+            <tbody>
+                {% for artist in artists %}
+                    <tr>
+                        <td>{{ artist[0] }}</td>
+                        <td>{{ artist[1] }}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+
+
+
 
     <list>
         <li>ArtistName, Rating</li>

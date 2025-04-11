@@ -9,9 +9,10 @@ mydb = mysql.connector.connect(
 mydb.autocommit = True
 mycursor = mydb.cursor()
 
-def SearchBySong(songTitle):
-    sql = "SELECT * FROM Song WHERE SongTitle LIKE %s"
-    val = ("%" + songTitle + "%",)
+def SearchBySong(songTitle, artistName):
+    # HEY!!! join the genre and album info
+    sql = "SELECT * FROM Song WHERE SongTitle LIKE %s AND ArtistName LIKE %s"
+    val = ("%" + songTitle + "%", "%" + artistName + "%")
     mycursor.execute(sql, val)
     myresult = mycursor.fetchall()
     print(myresult)
@@ -30,9 +31,7 @@ def ReadBig():
     file_path = os.path.join(script_dir, "BigTable.sql")
     # print(file_path)
 
-    # Open the file
     fp = open(file_path, "r")
-    # fp = open("BigTable.sql", "r")
     sql = fp.read()
     fp.close()
 
@@ -41,7 +40,14 @@ def ReadBig():
         cursor.execute(sql)
         myresult = cursor.fetchall()
         return myresult
-    # return [1, 2, 3, 4, 5]
+
+
+def getAverageSong():
+    #get the average song length from the database
+    sql = "SELECT AVG(Time) FROM Song"
+    mycursor.execute(sql)
+    myresult = mycursor.fetchall()
+    return myresult[0][0]
 
 def UpdateBig():
     pass

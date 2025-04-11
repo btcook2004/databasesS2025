@@ -29,6 +29,8 @@
         <a href="/artists">Artists</a> |
         <a href="/genres">Genres</a> |
         <a href="/search">Search</a>
+        <button onclick="location.href='/clearTables'">Clear Tables</button>
+        <button onClick="location.href='/clearAndRemakeTables'">Clear And ReInsert</button>
     </nav>
 
     <h1>Songs</h1>
@@ -82,14 +84,35 @@
         <button type="submit">Delete</button>
         <br><br>
 
-    <list>
-        <li>Id, Title, Artist, AlbumId, Featured Artist, Rating, Time</li>
-            {% for song in songs %}
-                <!-- <li>{{ song.title }} by {{ song.artist }} ({{ song.album }})</li> -->
-                 <li>{{song}}</li>
-            {% endfor %}
 
-    </list>
+        <div class="table">
+            <table>
+                <head>
+                    <tr>
+                        <th>Id</th>
+                        <th>Title</th>
+                        <th>Artist</th>
+                        <th>AlbumId</th>
+                        <th>Featured Artist</th>
+                        <th>Rating</th>
+                        <th>Time</th>
+                    </tr>
+                </head>
+                <tbody>
+                    {% for song in songs %}
+                        <tr>
+                            <td>{{song[0]}}</td>
+                            <td>{{song[1]}}</td>
+                            <td>{{song[2]}}</td>
+                            <td>{{song[3]}}</td>
+                            <td>{{song[4]}}</td>
+                            <td>{{song[5]}}</td>
+                            <td>{{song[6]}}</td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
 
     <br><br>
 

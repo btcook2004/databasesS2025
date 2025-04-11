@@ -28,6 +28,8 @@
         <a href="/artists">Artists</a> |
         <a href="/genres">Genres</a> |
         <a href="/search">Search</a>
+        <button onclick="location.href='/clearTables'">Clear Tables</button>
+        <button onClick="location.href='/clearAndRemakeTables'">Clear And ReInsert</button>
     </nav>
     <h1>Big CRUD</h1>
 
@@ -39,6 +41,9 @@
             {% endfor %}
 
     </list>
+
+    <h1>Average Length of Songs:</h1>
+    <p>{{ averageSongLength }}</p>
 
 </body>
 

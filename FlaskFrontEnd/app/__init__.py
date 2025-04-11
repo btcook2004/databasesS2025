@@ -4,6 +4,7 @@ import CRUD.CRUD_Album as CRUD_Album
 import CRUD.CRUD_Artist as CRUD_Artist
 import CRUD.CRUD_Genre as CRUD_Genre
 import CRUD.CRUD_Index as CRUD_Index
+import app.clearTables as CT
 app = Flask(__name__)
 searchResults = []
 
@@ -12,14 +13,28 @@ searchResults = []
 def index():
    # do everything needed to insert a song with album, artist, genre, etc.
    BigTable = CRUD_Index.ReadBig();
-   return render_template('index.html', bigTable=BigTable)
+   averageSongLength = CRUD_Index.getAverageSong()
+   return render_template('index.html', bigTable=BigTable, averageSongLength=averageSongLength)
+
+@app.route('/clearTables')
+def clear():
+   CT.clearTables()
+   return redirect('/')
+
+@app.route('/clearAndRemakeTables')
+def clearAndRemakeTables():
+   CT.clearAndRemakeTables()
+   return redirect('/')
+
+
 
 @app.route('/search', methods=['GET', 'POST'])
 def search():
    if request.method == 'POST':
       song_title = request.form['songTitle']
+      artist_name = request.form['artistName']
       global searchResults
-      searchResults = CRUD_Index.SearchBySong(song_title)
+      searchResults = CRUD_Index.SearchBySong(song_title, artist_name)
       return redirect('/search_results')
    return render_template('search.html')
 

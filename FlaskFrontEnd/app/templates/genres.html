@@ -33,43 +33,98 @@
     </nav>
     <h1>Genre List</h1>
 
-    <form action="/create_genre" method="POST">
-        <strong>CREATE</strong>
-        <label for="genreName">Genre Name:</label>
-        <input type="text" id="genreName" name="genreName" required>
-        <label for="albumId">Album ID:</label>
-        <input type="number" id="albumId" name="albumId" required>
-        <label for="artistName">Artist Name:</label>
-        <input type="text" id="artistName" name="artistName" required>
-        <label for="songId">Song ID:</label>
-        <input type="number" id="songId" name="songId" required>
-        <button type="submit">Create</button>
-        <br><br>
-    </form>
+    <div style="with: 100%;">
+        <div style="float: left; width: 33.33%;">
+            <h2 style="text-align: center;">Create</h2>
+            <form action="/create_genre" method="POST">
+                <div style="display: flex; align-items: center; margin-bottom: 10px;">
+                    <label for="genreName" style="flex: 1; text-align: right; margin-right: 10px;">Genre Name:</label>
+                    <div style="flex: 2; display: flex; justify-content: center;">
+                        <input type="text" id="genreName" name="genreName" required>
+                    </div>
+                </div>
+                <div style="display: flex; align-items: center; margin-bottom: 10px;">
+                    <label for="albumId" style="flex: 1; text-align: right; margin-right: 10px;">Album ID:</label>
+                    <div style="flex: 2; display: flex; justify-content: center;">
+                        <input type="number" id="albumId" name="albumId" required>
+                    </div>
+                </div>
+                <div style="display: flex; align-items: center; margin-bottom: 10px;">
+                    <label for="artistName" style="flex: 1; text-align: right; margin-right: 10px;">Artist Name:</label>
+                    <div style="flex: 2; display: flex; justify-content: center;">
+                        <input type="text" id="artistName" name="artistName" required>
+                    </div>
+                </div>
+                <div style="display: flex; align-items: center; margin-bottom: 10px;">
+                    <label for="songId" style="flex: 1; text-align: right; margin-right: 10px;">Song ID:</label>
+                    <div style="flex: 2; display: flex; justify-content: center;">
+                        <input type="number" id="songId" name="songId" required>
+                    </div>
+                </div>
+                <br>
+                <div style="text-align: center;">
+                    <button type="submit">Update</button>
+                </div>
+                <br><br>
+        </div>
+        <div style="float: left; width: 33.33%;">
+            <h2 style="text-align: center;">Update</h2>
+            <form action="/update_genre" method="POST">
+                <div style="display: flex; align-items: center; margin-bottom: 10px;">
+                    <label for="genreId" style="flex: 1; text-align: right; margin-right: 10px;">Genre ID:</label>
+                    <div style="flex: 2; display: flex; justify-content: center;">
+                        <input type="number" id="genreId" name="genreId" required>
+                    </div>
+                </div>
+                <div style="display: flex; align-items: center; margin-bottom: 10px;">
+                    <label for="genreName" style="flex: 1; text-align: right; margin-right: 10px;">Genre Name:</label>
+                    <div style="flex: 2; display: flex; justify-content: center;">
+                        <input type="text" id="genreName" name="genreName" required>
+                    </div>
+                </div>
+                <div style="display: flex; align-items: center; margin-bottom: 10px;">
+                    <label for="albumId" style="flex: 1; text-align: right; margin-right: 10px;">Album ID:</label>
+                    <div style="flex: 2; display: flex; justify-content: center;">
+                        <input type="number" id="albumId" name="albumId" required>
+                    </div>
+                </div>
+                <div style="display: flex; align-items: center; margin-bottom: 10px;">
+                    <label for="artistName" style="flex: 1; text-align: right; margin-right: 10px;">Artist Name:</label>
+                    <div style="flex: 2; display: flex; justify-content: center;">
+                        <input type="text" id="artistName" name="artistName" required>
+                    </div>
+                </div>
+                <div style="display: flex; align-items: center; margin-bottom: 10px;">
+                    <label for="songId" style="flex: 1; text-align: right; margin-right: 10px;">Song ID:</label>
+                    <div style="flex: 2; display: flex; justify-content: center;">
+                        <input type="number" id="songId" name="songId" required>
+                    </div>
+                </div>
+                <br>
+                <div style="text-align: center;">
+                    <button type="submit">Update</button>
+                </div>
 
-    <form action="/update_genre" method="POST">
-        <strong>UPDATE</strong>
-        <label for="genreId">Genre ID:</label>
-        <input type="number" id="genreId" name="genreId" required>
-        <label for="genreName">Genre Name:</label>
-        <input type="text" id="genreName" name="genreName" required>
-        <label for="albumId">Album ID:</label>
-        <input type="number" id="albumId" name="albumId" required>
-        <label for="artistName">Artist Name:</label>
-        <input type="text" id="artistName" name="artistName" required>
-        <label for="songId">Song ID:</label>
-        <input type="number" id="songId" name="songId" required>
-        <button type="submit">Update</button>
-        <br><br>
-    </form>
+            </form>
+        </div>
+        <div style="float: left; width: 33.33%;">
+            <h2 style="text-align: center;">Delete</h2>
+            <form action="/delete_genre" method="POST">
+                <div style="display: flex; align-items: center; margin-bottom: 10px;">
+                    <label for="genreId" style="flex: 1; text-align: right; margin-right: 10px;">Genre ID:</label>
+                    <div style="flex: 2; display: flex; justify-content: center;">
+                        <input type="number" id="genreId" name="genreId" required>
+                    </div>
+                </div>
+                <br>
+                <div style="text-align: center;">
+                    <button type="submit">Delete</button>
+                </div>
+            </form>
+        </div>
+    </div>
 
-    <form action="/delete_genre" method="POST">
-        <strong>DELETE</strong>
-        <label for="genreId">Genre ID:</label>
-        <input type="number" id="genreId" name="genreId" required>
-        <button type="submit">Delete</button>
-        <br><br>
-    </form>
+    <div style="clear: both;"></div>
 
     <div class="table">
         <table>

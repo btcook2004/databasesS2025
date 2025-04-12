@@ -35,84 +35,164 @@
 
     <h1>Songs</h1>
 
-    <form action="/create_song" method="POST">
-        <strong>CREATE</strong>
-        <label for="songTitle">Song Title:</label>
-        <input type="text" id="songTitle" name="songTitle" required>
-        <label for="artistName">Artist Name:</label>
-        <input type="text" id="artistName" name="artistName" required>
-        <label for="albumId">Album ID:</label>
-        <input type="number" id="albumId" name="albumId" required>
-        <label for="albumName">Album Name:</label>
-        <input type="text" id="albumName" name="albumName" required>
-        <label for="featuredArtist">Featured Artist:</label>
-        <input type="text" id="featuredArtist" name="featuredArtist">
-        <label for="rating">Rating:</label>
-        <input type="number" id="rating" name="rating" required>
-        <label for="time">Time:</label>
-        <input type="text" id="time" name="time" required>
-        <button type="submit">Create</button>
-        <br><br>
-    </form>
-
-    <form action="/update_song" method="POST">
-        <strong>UPDATE</strong>
-        <label for="songId">Song ID:</label>
-        <input type="number" id="songId" name="songId" required>
-        <label for="songTitle">Song Title:</label>
-        <input type="text" id="songTitle" name="songTitle" required>
-        <label for="artistName">Artist Name:</label>
-        <input type="text" id="artistName" name="artistName" required>
-        <label for="albumId">Album ID:</label>
-        <input type="number" id="albumId" name="albumId" required>
-        <label for="albumName">Album Name:</label>
-        <input type="text" id="albumName" name="albumName" required>
-        <label for="featuredArtist">Featured Artist:</label>
-        <input type="text" id="featuredArtist" name="featuredArtist">
-        <label for="rating">Rating:</label>
-        <input type="number" id="rating" name="rating" required>
-        <label for="time">Time:</label>
-        <input type="text" id="time" name="time" required>
-        <button type="submit">Update</button>
-        <br><br>
-    </form>
-
-    <form action="/delete_song" method="POST">
-        <strong>DELETE</strong>
-        <label for="songId">Song ID:</label>
-        <input type="number" id="songId" name="songId" required>
-        <button type="submit">Delete</button>
-        <br><br>
-
-
-        <div class="table">
-            <table>
-                <head>
-                    <tr>
-                        <th>Id</th>
-                        <th>Title</th>
-                        <th>Artist</th>
-                        <th>AlbumId</th>
-                        <th>Featured Artist</th>
-                        <th>Rating</th>
-                        <th>Time</th>
-                    </tr>
-                </head>
-                <tbody>
-                    {% for song in songs %}
-                        <tr>
-                            <td>{{song[0]}}</td>
-                            <td>{{song[1]}}</td>
-                            <td>{{song[2]}}</td>
-                            <td>{{song[3]}}</td>
-                            <td>{{song[4]}}</td>
-                            <td>{{song[5]}}</td>
-                            <td>{{song[6]}}</td>
-                        </tr>
-                    {% endfor %}
-                </tbody>
-            </table>
+    <div style="width: 100%;">
+        <div style="float: left; width: 33.33%;">
+            <h2 style="text-align: center;">Create</h2>
+            <form action="/create_song" method="POST">
+                <div style="display: flex; align-items: center; margin-bottom: 10px;">
+                    <label for="songTitle" style="flex: 1; text-align: right; margin-right: 10px;">Song Title:</label>
+                    <div style="flex: 2; display: flex; justify-content: center;">
+                        <input type="text" id="songTitle" name="songTitle" required>
+                    </div>
+                </div>
+                <div style="display: flex; align-items: center; margin-bottom: 10px;">
+                    <label for="artistName" style="flex: 1; text-align: right; margin-right: 10px;">Artist Name:</label>
+                    <div style="flex: 2; display: flex; justify-content: center;">
+                        <input type="text" id="artistName" name="artistName" required>
+                    </div>
+                </div>
+                <div style="display: flex; align-items: center; margin-bottom: 10px;">
+                    <label for="albumId" style="flex: 1; text-align: right; margin-right: 10px;">Album ID:</label>
+                    <div style="flex: 2; display: flex; justify-content: center;">
+                        <input type="number" id="albumId" name="albumId" required>
+                    </div>
+                </div>
+                <div style="display: flex; align-items: center; margin-bottom: 10px;">
+                    <label for="albumName" style="flex: 1; text-align: right; margin-right: 10px;">Album Name:</label>
+                    <div style="flex: 2; display: flex; justify-content: center;">
+                        <input type="text" id="albumName" name="albumName" required>
+                    </div>
+                </div>
+                <div style="display: flex; align-items: center; margin-bottom: 10px;">
+                    <label for="featuredArtist" style="flex: 1; text-align: right; margin-right: 10px;">Featured Artist:</label>
+                    <div style="flex: 2; display: flex; justify-content: center;">
+                        <input type="text" id="featuredArtist" name="featuredArtist">
+                    </div>
+                </div>
+                <div style="display: flex; align-items: center; margin-bottom: 10px;">
+                    <label for="rating" style="flex: 1; text-align: right; margin-right: 10px;">Rating:</label>
+                    <div style="flex: 2; display: flex; justify-content: center;">
+                        <input type="number" id="rating" name="rating" required>
+                    </div>
+                </div>
+                <div style="display: flex; align-items: center; margin-bottom: 10px;">
+                    <label for="time" style="flex: 1; text-align: right; margin-right: 10px;">Time:</label>
+                    <div style="flex: 2; display: flex; justify-content: center;">
+                        <input type="text" id="time" name="time" required>
+                    </div>
+                </div>
+                <br>
+                <div style="text-align: center;">
+                    <button type="submit">Create</button>
+                </div>
+                <br><br>  
+            </form>
         </div>
+        <div style="float: left; width: 33.33%;">
+            <h2 style="text-align: center;">Update</h2>
+            <form action="/update_song" method="POST">
+                <div style="display: flex; align-items: center; margin-bottom: 10px;">
+                    <label for="songId" style="flex: 1; text-align: right; margin-right: 10px;">Song ID:</label>
+                    <div style="flex: 2; display: flex; justify-content: center;">
+                        <input type="number" id="songId" name="songId" required>
+                    </div>
+                </div>
+                <div style="display: flex; align-items: center; margin-bottom: 10px;">
+                    <label for="songTitle" style="flex: 1; text-align: right; margin-right: 10px;">Song Title:</label>
+                    <div style="flex: 2; display: flex; justify-content: center;">
+                        <input type="text" id="songTitle" name="songTitle" required>
+                    </div>
+                </div>
+                <div style="display: flex; align-items: center; margin-bottom: 10px;">
+                    <label for="artistName" style="flex: 1; text-align: right; margin-right: 10px;">Artist Name:</label>
+                    <div style="flex: 2; display: flex; justify-content: center;">
+                        <input type="text" id="artistName" name="artistName" required>
+                    </div>
+                </div>
+                <div style="display: flex; align-items: center; margin-bottom: 10px;">
+                    <label for="albumId" style="flex: 1; text-align: right; margin-right: 10px;">Album ID:</label>
+                    <div style="flex: 2; display: flex; justify-content: center;">
+                        <input type="number" id="albumId" name="albumId" required>
+                    </div>
+                </div>
+                <div style="display: flex; align-items: center; margin-bottom: 10px;">
+                    <label for="albumName" style="flex: 1; text-align: right; margin-right: 10px;">Album Name:</label>
+                    <div style="flex: 2; display: flex; justify-content: center;">
+                        <input type="text" id="albumName" name="albumName" required>
+                    </div>
+                </div>
+                <div style="display: flex; align-items: center; margin-bottom: 10px;">
+                    <label for="featuredArtist" style="flex: 1; text-align: right; margin-right: 10px;">Featured Artist:</label>
+                    <div style="flex: 2; display: flex; justify-content: center;">
+                        <input type="text" id="featuredArtist" name="featuredArtist">
+                    </div>
+                </div>
+                <div style="display: flex; align-items: center; margin-bottom: 10px;">
+                    <label for="rating" style="flex: 1; text-align: right; margin-right: 10px;">Rating:</label>
+                    <div style="flex: 2; display: flex; justify-content: center;">
+                        <input type="number" id="rating" name="rating" required>
+                    </div>
+                </div>
+                <div style="display: flex; align-items: center; margin-bottom: 10px;">
+                    <label for="time" style="flex: 1; text-align: right; margin-right: 10px;">Time:</label>
+                    <div style="flex: 2; display: flex; justify-content: center;">
+                        <input type="text" id="time" name="time" required>
+                    </div>
+                </div>
+                <br>
+                <div style="text-align: center;">
+                    <button type="submit">Update</button>
+                </div>
+                <br><br>  
+            </form>
+        </div>
+        <div style="float: left; width: 33.33%;">
+            <h2 style="text-align: center;">Delete</h2>
+            <form action="/delete_song" method="POST">
+                <div style="display: flex; align-items: center; margin-bottom: 10px;">
+                    <label for="songId" style="flex: 1; text-align: right; margin-right: 10px;">Song ID:</label>
+                    <div style="flex: 2; display: flex; justify-content: center;">
+                        <input type="number" id="songId" name="songId" required>
+                    </div>
+                </div>
+                <br>
+                <div style="text-align: center;">
+                    <button type="submit">Delete</button>
+                </div>
+                <br><br>  
+            </form>
+        </div>
+    </div>
+    <div style="clear: both;"></div>
+
+    <div class="table">
+        <table>
+            <head>
+                <tr>
+                    <th>Id</th>
+                    <th>Title</th>
+                    <th>Artist</th>
+                    <th>AlbumId</th>
+                    <th>Featured Artist</th>
+                    <th>Rating</th>
+                    <th>Time</th>
+                </tr>
+            </head>
+            <tbody>
+                {% for song in songs %}
+                    <tr>
+                        <td>{{song[0]}}</td>
+                        <td>{{song[1]}}</td>
+                        <td>{{song[2]}}</td>
+                        <td>{{song[3]}}</td>
+                        <td>{{song[4]}}</td>
+                        <td>{{song[5]}}</td>
+                        <td>{{song[6]}}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
 
     <br><br>
 

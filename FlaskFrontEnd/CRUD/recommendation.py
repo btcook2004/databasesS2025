@@ -9,28 +9,30 @@ mydb = mysql.connector.connect(
 mydb.autocommit = True
 mycursor = mydb.cursor()
 
-def getRecommendations(id1, id2, id3, id4, id5):
+def getRecommendations(seconds):
     # use a sql statement to get songs with the same genre as the songs in the input list
+    minutes = int(seconds) * 60
     sql = """
-    SELECT
-        Song.SongId, Song.SongTitle, Song.ArtistName, Album.AlbumName, Genre.GenreName
-    FROM
-        Song
-    JOIN
-        Album ON Song.AlbumId = Album.AlbumId
-    JOIN
-        Genre ON Song.SongId = Genre.SongId
-    WHERE
-        Genre.GenreName IN (
-            SELECT GenreName
-            FROM Genre
-            WHERE SongId IN (%s, %s)
-        )
+    SELECT SongId, SongTitle, ArtistName, Time 
+    FROM Song
+    WHERE Time <= %s
+    ORDER BY Time DESC
     """
-    val = (id1, id2)
+    val = (minutes, )
     mycursor.execute(sql, val)
     myresult = mycursor.fetchall()
+
+    # Generate a playlist where the total time is as close as possible to the given minutes
     recommendations = []
-    for x in myresult:
-        recommendations.append(x)
-    return recommendations
+    total_time = 0
+
+    for song in myresult:
+        if total_time + song[3] <= minutes:
+            recommendations.append(song)
+            total_time += song[3]
+    # The second SQL execution and redundant loop are removed
+
+
+    # Also return the total time of the playlist
+    totalTime = round(sum([song[3] for song in recommendations]) / 60, 2)
+    return recommendations, totalTime

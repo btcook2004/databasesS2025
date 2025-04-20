@@ -28,15 +28,17 @@
         <a href="/artists">Artists</a> |
         <a href="/genres">Genres</a> |
         <a href="/search">Search</a> |
-        <a href="/recommendations">Recommendations</a>
-        <button onclick="location.href='/clearTables'">Clear Tables</button>
+        <a href="/recommendations">Time Block</a>
         <button onClick="location.href='/clearAndRemakeTables'">Clear And ReInsert</button>
     </nav>
+    <br><br>
+    <h1>Welcome to the Music Database!</h1>
+    <h2>Stats:</h2>
 
-    <h2>Average Length of Songs:</h2>
+    <h3>Average Length of Songs:</h3>
     <p>{{ averageSongLength }}</p>
 
-    <h2>Top 5 Rated Albums</h2>
+    <h3>Top 5 Rated Albums</h3>
     <table>
         <thead>
             <tr>
@@ -56,10 +58,9 @@
         </tbody>
     </table>
 
-    <h2>Artist with highest rated average songs {{bestArtistSongs[0][0]}} with an average song rating of {{bestArtistSongs[0][1]}}</h2>
+    <h3>Artist with highest rated average songs {{bestArtistSongs[0][0]}} with an average song rating of {{bestArtistSongs[0][1]}}</h3>
 
-    <h2>Cool Stats</h2>
-    
+    <h3>Friendly View</h3>
     <div class="table">
         <table>
             <head>

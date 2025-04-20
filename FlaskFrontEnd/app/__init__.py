@@ -186,13 +186,9 @@ def recommendations():
 @app.route('/recommendations', methods=['POST'])
 def recommendations_post():
    # Placeholder for recommendations logic
-   id1 = request.form['songId1']
-   id2 = request.form['songId2']
-   id3 = request.form['songId3']
-   id4 = request.form['songId4']
-   id5 = request.form['songId5']
+   seconds = request.form['songId1']
    global recommendationResults
-   recommendationResults = recom.getRecommendations(id1, id2, id3, id4, id5)
+   recommendationResults, totalTime = recom.getRecommendations(seconds)
    # print(recommendationResults)
-   return render_template('recommendations.html', recommendations=recommendationResults)
+   return render_template('recommendations.html', recommendations=recommendationResults, totalTime=totalTime)
 

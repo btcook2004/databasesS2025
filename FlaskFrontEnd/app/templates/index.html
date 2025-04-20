@@ -27,23 +27,61 @@
         <a href="/albums">Albums</a> |
         <a href="/artists">Artists</a> |
         <a href="/genres">Genres</a> |
-        <a href="/search">Search</a>
+        <a href="/search">Search</a> |
+        <a href="/recommendations">Recommendations</a>
         <button onclick="location.href='/clearTables'">Clear Tables</button>
         <button onClick="location.href='/clearAndRemakeTables'">Clear And ReInsert</button>
     </nav>
-    <h1>Big CRUD</h1>
 
-    <H1>Big Table</H1>
-    <list>
-        <li>Headings</li>
-            {% for entry in bigTable %}
-                 <li>{{entry}}</li>
-            {% endfor %}
-
-    </list>
-
-    <h1>Average Length of Songs:</h1>
+    <h2>Average Length of Songs:</h2>
     <p>{{ averageSongLength }}</p>
+
+    <h2>Top 5 Rated Albums</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Album</th>
+                <th>Artist</th>
+                <th>Rating</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for album in albumsWithHighestAvgRatings %}
+                <tr>
+                    <td>{{ album[0] }}</td>
+                    <td>{{ album[1] }}</td>
+                    <td>{{ album[2] }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <h2>Artist with highest rated average songs {{bestArtistSongs[0][0]}} with an average song rating of {{bestArtistSongs[0][1]}}</h2>
+
+    <h2>Cool Stats</h2>
+    
+    <div class="table">
+        <table>
+            <head>
+                <tr>
+                    <th>Song Title</th>
+                    <th>Artist</th>
+                    <th>Album</th>
+                    <th>Genre</th>
+                </tr>
+            </head>
+            <tbody>
+                {% for entry in bigTable %}
+                    <tr>
+                        <td>{{entry[0]}}</td>
+                        <td>{{entry[1]}}</td>
+                        <td>{{entry[2]}}</td>
+                        <td>{{entry[3]}}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
 
 </body>
 

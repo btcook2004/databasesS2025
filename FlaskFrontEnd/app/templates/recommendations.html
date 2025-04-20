@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        nav {
+            background-color: #f4f4f4;
+            padding: 10px;
+            text-align: center;
+        }
+    
+        nav a {
+            margin: 0 15px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+    </style>
+    <title>Songs</title>
+</head>
+
+<body>
+  <nav>
+    <a href="/">Home</a> |
+    <a href="/songs">Songs</a> |
+    <a href="/albums">Albums</a> |
+    <a href="/artists">Artists</a> |
+    <a href="/genres">Genres</a> |
+    <a href="/search">Search</a> |
+    <a href="/recommendations">Recommendations</a>
+    <button onclick="location.href='/clearTables'">Clear Tables</button>
+    <button onClick="location.href='/clearAndRemakeTables'">Clear And ReInsert</button>
+</nav>
+
+<h1>Recommendation</h1>
+
+<h2>Enter a few Song IDs to find similar music</h2>
+<form action="/recommendations" method="POST">
+    <div style="display: flex; align-items: center; margin-bottom: 10px;">
+        <label for="songId1" style="flex: 1; text-align: right; margin-right: 10px;">Song ID 1:</label>
+        <div style="flex: 2; display: flex; justify-content: center;">
+            <input type="text" id="songId1" name="songId1" required>
+        </div>
+    </div>
+    <div style="display: flex; align-items: center; margin-bottom: 10px;">
+        <label for="songId2" style="flex: 1; text-align: right; margin-right: 10px;">Song ID 2:</label>
+        <div style="flex: 2; display: flex; justify-content: center;">
+            <input type="text" id="songId2" name="songId2">
+        </div>
+    </div>
+    <div style="display: flex; align-items: center; margin-bottom: 10px;">
+        <label for="songId3" style="flex: 1; text-align: right; margin-right: 10px;">Song ID 3:</label>
+        <div style="flex: 2; display: flex; justify-content: center;">
+            <input type="text" id="songId3" name="songId3">
+        </div>
+    </div>
+    <div style="display: flex; align-items: center; margin-bottom: 10px;">
+        <label for="songId4" style="flex: 1; text-align: right; margin-right: 10px;">Song ID 4:</label>
+        <div style="flex: 2; display: flex; justify-content: center;">
+            <input type="text" id="songId4" name="songId4">
+        </div>
+    </div>
+    <div style="display: flex; align-items: center; margin-bottom: 10px;">
+        <label for="songId5" style="flex: 1; text-align: right; margin-right: 10px;">Song ID 5:</label>
+        <div style="flex: 2; display: flex; justify-content: center;">
+            <input type="text" id="songId5" name="songId5">
+        </div>
+    </div>
+    <button type="submit">Get Recommendations</button>
+</form>
+
+<div class="table">
+    <table>
+        <head>
+            <tr>
+                <th>Song ID</th>
+                <th>Song Title</th>
+                <th>Artist Name</th>
+                <th>Album Name</th>
+                <th>Genre</th>
+            </tr>
+        </head>
+        <tbody>
+            {% for recom in recommendations %}
+            <tr>
+                <td>{{ recom[0] }}</td>
+                <td>{{ recom[1] }}</td>
+                <td>{{ recom[2] }}</td>
+                <td>{{ recom[3] }}</td>
+                <td>{{ recom[4] }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+
+
+
+
+</body>
+
+</html>

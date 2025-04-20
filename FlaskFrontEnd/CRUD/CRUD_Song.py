@@ -75,12 +75,5 @@ def UpdateSong(SongId, SongTitle, ArtistName, AlbumId, FeaturedArtist, Rating, T
     mydb.commit()
 
 def DeleteSong(SongId):
-    #add in check for dependencies
-    mycursor.execute("SELECT * FROM Genre WHERE SongId = %s", (SongId,))
-    result = mycursor.fetchone()
-    if result is not None:
-        print("Cannot delete song, it has genres associated with it.")
-        return
-
     mycursor.execute("DELETE FROM SONG WHERE SongId = %s", (SongId,))
     mydb.commit()

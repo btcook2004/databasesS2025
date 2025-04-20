@@ -33,11 +33,7 @@ CREATE TABLE Song(
 CREATE TABLE Genre(
   GenreId int AUTO_INCREMENT,
   GenreName varchar(255),
-  AlbumId int,
-  ArtistName varchar(255),
   SongId int,
   PRIMARY KEY (GenreId),
-  FOREIGN KEY(AlbumId) REFERENCES Album(AlbumId),
-  FOREIGN KEY(ArtistName) REFERENCES Artist(ArtistName),
   FOREIGN KEY(SongId) REFERENCES Song(SongId)
 );

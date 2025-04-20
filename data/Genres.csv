@@ -1,0 +1,443 @@
+GenreName,SongId
+Rock and Roll,1
+Rock,1
+Soft Rock,2
+Rock,3
+Psychedelic Rock,3
+Classic Rock,4
+Fold-Rock,4
+Singer-Songwriter,4
+Folk,4
+Rock,5
+Soft Rock,5
+Jazz Rock,5
+Soft Rock,6
+Disco,6
+R&B,6
+Pop,6
+Duet,6
+Country,7
+Classic Country,7
+Hard Rock,8
+Rock,8
+Psychedelic Rock,9
+Rock,9
+Pop,9
+Folk Rock,10
+Rock and Roll,10
+Rock and Roll,11
+Rock,11
+Pop,11
+Folk,11
+Rock,12
+Pop,12
+Folk,12
+Gulf and Western,12
+Symphonic Rock,13
+Rock,13
+Pop,13
+Reggae Rock,14
+Rock,14
+Folk,15
+Folk,15
+Pop,16
+Rock,17
+Psychedelic Pop,17
+Psychedelic Rock,17
+Rock and Roll,17
+Surf Rock,18
+Rock,18
+Pop,18
+Rock,19
+Blues,19
+Swamp Rock,19
+Southern Rock,20
+Blues Rock,20
+Country Rock,20
+Country,21
+Pop,22
+Ballad,22
+Rock,23
+Rock and Roll With Horns,23
+Pop,24
+Soft Rock,24
+Rock,25
+Pop,26
+Folk,26
+Rock,27
+Jazz,27
+Funk,27
+Disco,27
+Blues,27
+Jazz Rock,27
+Symphonic Rock,28
+Classic Rock,28
+Rock,29
+Rock and Roll With Horns,29
+Pop,30
+Rock,30
+Rock,31
+Pop Rock,31
+Soft Rock,31
+Country,32
+Classic Country,32
+Soft Rock,33
+Rock,33
+Rock and Roll,34
+Rock,34
+Psychedelic Pop,34
+Pop,35
+Rock and Roll,35
+Pop,36
+Ballad,36
+Rock,37
+Psychedelic Rock,37
+Pop,38
+Soft Rock,38
+Country,39
+Surf Rock,40
+Rock And Roll,40
+Rock,41
+Pop,41
+Folk,41
+Gulf and Western,42
+Tropical Rock,42
+Gulf Rock,42
+Rock,43
+Blues,43
+Pop,43
+Rock and Roll,43
+Rock and Roll,44
+Rock,44
+Folk,44
+Rock,45
+Soft Rock,45
+Symphonic Rock,46
+Classic Rock,46
+Rock,47
+Folk,47
+Pop,47
+Rock and Roll,48
+Rock,48
+Folk,49
+Pop,49
+Pop,50
+Folk,50
+Rock,51
+Folk,51
+Psychedelic Rock,51
+Rock,52
+Psychedelic Rock,52
+Rock,53
+Blue,53
+Rock and Roll With Horns,53
+Rock,54
+Pop,54
+Ska,54
+Genre,55
+Rock and Roll,55
+Swamp Rock,56
+Rock,56
+Southern Rock,56
+Roots Rock,56
+Folk,56
+Pop,57
+Rock and Roll,58
+Country,59
+Pop,60
+Rock,61
+Surf Rock,62
+Rock,62
+Pop,62
+Folk,62
+Rock,63
+Rock and Roll,64
+Rock,64
+Rock,65
+Folk,65
+Pop,65
+Swamp Rock,66
+Rock,66
+Folk,66
+Pop,67
+Pop,68
+Rock and Roll,68
+Rock,69
+Pop Rock,69
+Folk,69
+Rock and Roll,69
+Rock and Roll,70
+Rock and Roll,71
+Southern Rock,71
+Rock and Roll With Horns,72
+Soft Rock,72
+Pop,73
+Folk,73
+Rock,74
+Progressive Rock,74
+Rock,75
+Pop,75
+Gulf and Western,75
+Rock,76
+Hard Rock,76
+Pop,76
+Pop,77
+Surf Rock,78
+Rock,78
+Pop,78
+Folk,78
+Jazz Rock,79
+Soft Rock,80
+Rock,81
+Psychedelic Rock,82
+Rock,82
+Rock,83
+Psychedelic Rock,83
+Rock and Roll,84
+Symphonic Rock,85
+Country,86
+Rock,87
+Rock and Roll,88
+Surf Rock,89
+Pop,90
+Rock and Roll,91
+Rock,92
+Rock and Roll,93
+Pop,94
+Pop,95
+Rock,96
+Rock and Roll,97
+Soft Rock,98
+Rock and Roll,99
+Country,100
+Jazz Rock,101
+Pop,102
+Rock,103
+Rock and Roll With Horns,104
+Symphonic Rock,105
+Pop,106
+Rock,107
+Gulf and Western,108
+Psychedelic Rock,109
+Country,110
+Rock and Roll,111
+Rock and Roll,112
+Pop,113
+Pop,114
+Rock,115
+Rock,116
+Gulf and Western,117
+Southern Rock,118
+Surf Rock,119
+Pop,120
+Rock,121
+Rock,122
+Psychedelic Rock,123
+Soft Rock,124
+Rock and Roll,125
+Country,126
+Jazz Rock,127
+Country,128
+Rock and Roll,129
+Folk,130
+Symphonic Rock,131
+Rock and Roll With Horns,132
+Pop,133
+Rock and Roll,134
+Folk,135
+Rock and Roll,136
+Pop,137
+Rock,138
+Country,139
+Surf Rock,140
+Pop,141
+Gulf and Western,142
+Gulf and Western,143
+Soft Rock,144
+Rock and Roll,145
+Rock and Roll,146
+Pop,147
+Pop,148
+Country,149
+Symphonic Rock,150
+Rock and Roll With Horns,151
+Psychedelic Rock,152
+Pop,153
+Rock,154
+Rock and Roll,155
+Jazz Rock,156
+Symphonic Rock,157
+Swamp Rock,158
+Soft Rock,159
+Rock and Roll,160
+Rock and Roll,161
+Pop,162
+Pop,163
+Rock,164
+Country,165
+Rock and Roll,166
+Rock,167
+Pop,168
+Surf Rock,169
+Pop,170
+Folk,171
+Rock and Roll,172
+Jazz Rock,173
+Rock and Roll,174
+Surf Rock,175
+Pop,176
+Swamp Rock,177
+Pop,178
+Pop,179
+Rock,180
+Rock and Roll,181
+Symphonic Rock,182
+Rock,183
+Pop,184
+Rock and Roll,185
+Pop,186
+Rock and Roll With Horns,187
+Country,188
+Soft Rock,189
+Country,190
+Rock,191
+Rock,192
+Folk,193
+Pop,194
+Folk,195
+Gulf and Western,196
+Surf Rock,197
+Rock,198
+Rock and Roll,199
+Rock,200
+Rock and Roll,201
+Rock and Roll With Horns,202
+Symphonic Rock,203
+Rock,204
+Soft Rock,205
+Rock,206
+Rock and Roll,207
+Pop,208
+Country,209
+Rock and Roll,210
+Rock,211
+Swamp Rock,212
+Country,213
+Country,214
+Gulf and Western,215
+Surf Rock,216
+Rock and Roll,217
+Rock,218
+Rock and Roll With Horns,219
+Rock,220
+Rock and Roll,221
+Rock and Roll,222
+Rock and Roll,223
+Pop,224
+Folk,225
+Pop,226
+Symphonic Rock,227
+Southern Rock,228
+Rock,229
+Pop,230
+Swamp Rock,231
+Symphonic Rock,232
+Surf Rock,233
+Pop,234
+Country,235
+Rock and Roll With Horns,236
+Southern Rock,237
+Rock and Roll,238
+Pop,239
+Rock and Roll,240
+Rock and Roll,241
+Rock,242
+Country,243
+Rock,244
+Pop,245
+Rock and Roll,246
+Swamp Rock,247
+Rock,248
+Rock and Roll,249
+Surf Rock,250
+Southern Rock,251
+Rock and Roll,252
+Pop,253
+Pop,254
+Swamp Rock,255
+Country,256
+Folk,257
+Gulf and Western,258
+Rock,259
+Symphonic Rock,260
+Rock and Roll With Horns,261
+Rock and Roll,262
+Rock and Roll,263
+Rock and Roll With Horns,264
+Pop,265
+Swamp Rock,266
+Rock and Roll,267
+Symphonic Rock,268
+Surf Rock,269
+Rock and Roll,270
+Rock and Roll With Horns,271
+Gulf and Western,272
+Swamp Rock,273
+Symphonic Rock,274
+Pop,275
+Country,276
+Jazz Rock,277
+Surf Rock,278
+Gulf and Western,279
+Surf Rock,280
+Swamp Rock,281
+Pop,282
+Jazz Rock,283
+Symphonic Rock,284
+Surf Rock,285
+Pop,286
+Rock,287
+Swamp Rock,288
+Country,289
+Gulf and Western,290
+Symphonic Rock,291
+Gulf and Western,292
+Country,293
+Pop,294
+Surf Rock,295
+Swamp Rock,296
+Symphonic Rock,297
+Symphonic Rock,298
+Surf Rock,299
+Pop,300
+Country,301
+Surf Rock,302
+Symphonic Rock,303
+Country,304
+Folk,305
+Country,306
+Folk,307
+Gulf and Western,308
+Gulf and Western,309
+Gulf and Western,310
+Gulf and Western,311
+Gulf and Western,312
+Gulf and Western,313
+Gulf and Western,314
+Gulf and Western,315
+Gulf and Western,316
+Gulf and Western,317
+Gulf and Western,318
+Gulf and Western,319
+Gulf and Western,320
+Gulf and Western,321
+Gulf and Western,322
+Gulf and Western,323
+Gulf and Western,324
+Gulf and Western,325
+Gulf and Western,326
+Gulf and Western,327
+Gulf and Western,328
+Gulf and Western,329
+Gulf and Western,330
+Gulf and Western,331

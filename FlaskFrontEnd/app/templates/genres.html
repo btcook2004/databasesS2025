@@ -27,7 +27,8 @@
         <a href="/albums">Albums</a> |
         <a href="/artists">Artists</a> |
         <a href="/genres">Genres</a> |
-        <a href="/search">Search</a>
+        <a href="/search">Search</a> |
+        <a href="/recommendations">Recommendations</a>
         <button onclick="location.href='/clearTables'">Clear Tables</button>
         <button onClick="location.href='/clearAndRemakeTables'">Clear And ReInsert</button>
     </nav>
@@ -44,18 +45,6 @@
                     </div>
                 </div>
                 <div style="display: flex; align-items: center; margin-bottom: 10px;">
-                    <label for="albumId" style="flex: 1; text-align: right; margin-right: 10px;">Album ID:</label>
-                    <div style="flex: 2; display: flex; justify-content: center;">
-                        <input type="number" id="albumId" name="albumId" required>
-                    </div>
-                </div>
-                <div style="display: flex; align-items: center; margin-bottom: 10px;">
-                    <label for="artistName" style="flex: 1; text-align: right; margin-right: 10px;">Artist Name:</label>
-                    <div style="flex: 2; display: flex; justify-content: center;">
-                        <input type="text" id="artistName" name="artistName" required>
-                    </div>
-                </div>
-                <div style="display: flex; align-items: center; margin-bottom: 10px;">
                     <label for="songId" style="flex: 1; text-align: right; margin-right: 10px;">Song ID:</label>
                     <div style="flex: 2; display: flex; justify-content: center;">
                         <input type="number" id="songId" name="songId" required>
@@ -66,6 +55,7 @@
                     <button type="submit">Update</button>
                 </div>
                 <br><br>
+            </form>
         </div>
         <div style="float: left; width: 33.33%;">
             <h2 style="text-align: center;">Update</h2>
@@ -80,18 +70,6 @@
                     <label for="genreName" style="flex: 1; text-align: right; margin-right: 10px;">Genre Name:</label>
                     <div style="flex: 2; display: flex; justify-content: center;">
                         <input type="text" id="genreName" name="genreName" required>
-                    </div>
-                </div>
-                <div style="display: flex; align-items: center; margin-bottom: 10px;">
-                    <label for="albumId" style="flex: 1; text-align: right; margin-right: 10px;">Album ID:</label>
-                    <div style="flex: 2; display: flex; justify-content: center;">
-                        <input type="number" id="albumId" name="albumId" required>
-                    </div>
-                </div>
-                <div style="display: flex; align-items: center; margin-bottom: 10px;">
-                    <label for="artistName" style="flex: 1; text-align: right; margin-right: 10px;">Artist Name:</label>
-                    <div style="flex: 2; display: flex; justify-content: center;">
-                        <input type="text" id="artistName" name="artistName" required>
                     </div>
                 </div>
                 <div style="display: flex; align-items: center; margin-bottom: 10px;">
@@ -132,8 +110,6 @@
                 <tr>
                     <th>Genre ID</th>
                     <th>Genre Name</th>
-                    <th>Album ID</th>
-                    <th>Artist Name</th>
                     <th>Song ID</th>
                 </tr>
             </head>

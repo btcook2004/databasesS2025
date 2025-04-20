@@ -40,11 +40,6 @@ def DeleteArtist(ArtistName):
     if result is not None:
         print("Cannot delete artist, they have albums associated with them.")
         return 
-    mycursor.execute("SELECT * FROM Genre WHERE ArtistName = %s", (ArtistName,))
-    result = mycursor.fetchone()
-    if result is not None:
-        print("Cannot delete artist, they have genres associated with them.")
-        return
     
     mycursor.execute("DELETE FROM ARTIST WHERE ArtistName = %s", (ArtistName,))
     # mydb.commit()

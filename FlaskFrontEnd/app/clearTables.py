@@ -15,8 +15,17 @@ def clearTables():
     mycursor.execute("DELETE FROM Song")
     mycursor.execute("DELETE FROM Album")
     mycursor.execute("DELETE FROM Artist")
+    mycursor.execute("DROP TABLE IF EXISTS album, artist, genre, song")
     mydb.commit()
 
+
+    fp = open("../Setup-Teardown/SQL_Setup.sql")
+    sqlString = fp.read()
+    sqlCommands = sqlString.split(';')
+    for command in sqlCommands:
+        mycursor.execute(command)
+    fp.close()
+    mydb.commit()
 
 def clearAndRemakeTables():
     clearTables()
@@ -35,6 +44,8 @@ def clearAndRemakeTables():
     albums_data = pd.read_csv(album_csv)
     song_csv = "../data/Songs.csv"
     songs_data = pd.read_csv(song_csv)
+    genre_csv = "../data/Genres.csv"
+    genres_data = pd.read_csv(genre_csv)
 
     # Connect to the database
     try:
@@ -70,11 +81,22 @@ def clearAndRemakeTables():
       # the csv does not have FeaturedArist, so we will set it to null
       # user the AlbumName to find the AlbumId
       insert_query = """
-      INSERT INTO song (SongTitle, ArtistName, AlbumId, Time)
-      VALUES (%s, %s, (SELECT AlbumId FROM Album WHERE AlbumName = %s), %s)
+      INSERT INTO song (SongTitle, ArtistName, AlbumId, Rating, Time)
+      VALUES (%s, %s, (SELECT AlbumId FROM Album WHERE AlbumName = %s), %s, %s)
       """
       for _, row in songs_data.iterrows():
-        cursor.execute(insert_query, (row['SongTitle'], row['ArtistName'], row['AlbumName'], row['Time']))
+        cursor.execute(insert_query, (row['SongTitle'], row['ArtistName'], row['AlbumName'], row['Rating'], row['Time']))
+      connection.commit()
+
+
+      # insert data into the genre table
+      # the Genre table has GenreName and SongId
+      insert_query = """
+        INSERT INTO Genre (GenreName, SongId)
+        VALUES (%s, %s)
+        """
+      for _, row in genres_data.iterrows():
+          cursor.execute(insert_query, (row['GenreName'], row['SongId']))
       connection.commit()
 
     except mysql.connector.Error as err:

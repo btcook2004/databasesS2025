@@ -9,21 +9,7 @@ mydb = mysql.connector.connect(
 mydb.autocommit = True
 mycursor = mydb.cursor()
 
-def CreateGenre(GenreName, AlbumId, ArtistName, SongId):
-    # if album is not already in album table, fail
-    mycursor.execute("SELECT * FROM ALBUM WHERE AlbumId = %s", (AlbumId,))
-    result = mycursor.fetchone()
-    if result is None:
-        print("Cannot add Genre, Album not found")
-        return
-
-    # if artist is not already in artist table, fail
-    mycursor.execute("SELECT * FROM ARTIST WHERE ArtistName = %s", (ArtistName,))
-    result = mycursor.fetchone()
-    if result is None:
-        print("Cannot add Genre, Artist not found")
-        return
-
+def CreateGenre(GenreName, SongId):
     # if song is not already in song table, fail
     mycursor.execute("SELECT * FROM SONG WHERE SongId = %s", (SongId,))
     result = mycursor.fetchone()
@@ -31,7 +17,7 @@ def CreateGenre(GenreName, AlbumId, ArtistName, SongId):
         print("Cannot add Genre, Song not found")
         return
 
-    mycursor.execute("INSERT INTO Genre (GenreName, AlbumId, ArtistName, SongId) VALUES (%s, %s, %s, %s)", (GenreName, AlbumId, ArtistName, SongId))
+    mycursor.execute("INSERT INTO Genre (GenreName, SongId) VALUES (%s, %s)", (GenreName, SongId))
     mydb.commit()
 
 
@@ -42,28 +28,14 @@ def ReadGenre():
         return myresult
 
 
-def UpdateGenre(GenreId, GenreName, AlbumId, ArtistName, SongId):
-    #make sure albumId exists
-    mycursor.execute("SELECT * FROM ALBUM WHERE AlbumId = %s", (AlbumId,))
-    result = mycursor.fetchone()
-    if result is None:
-        print("Cannot change Genre, Album not found")
-        return
-    
-    #make sure artistName exists
-    mycursor.execute("SELECT * FROM ARTIST WHERE ArtistName = %s", (ArtistName,))
-    result = mycursor.fetchone()
-    if result is None:
-        print("Cannot change Genre, Artist not found")
-        return
-
+def UpdateGenre(GenreId, GenreName, SongId):
     #make sure songId exists
     mycursor.execute("SELECT * FROM SONG WHERE SongId = %s", (SongId,))
     result = mycursor.fetchone()
     if result is None:
         print("Cannot change Genre, Song not found")
 
-    mycursor.execute("UPDATE Genre SET GenreName = %s, AlbumId = %s, ArtistName = %s, SongId = %s WHERE GenreId = %s", (GenreName, AlbumId, ArtistName, SongId, GenreId))
+    mycursor.execute("UPDATE Genre SET GenreName = %s, SongId = %s WHERE GenreId = %s", (GenreName, SongId, GenreId))
     mydb.commit()
 
 def DeleteGenre(GenreId):

@@ -52,11 +52,13 @@ try:
   # the csv does not have FeaturedArist, so we will set it to null
   # user the AlbumName to find the AlbumId
   insert_query = """
-  INSERT INTO song (SongTitle, ArtistName, AlbumId, Time)
-  VALUES (%s, %s, (SELECT AlbumId FROM Album WHERE AlbumName = %s), %s)
+  INSERT INTO song (SongTitle, ArtistName, AlbumId, Time, Rating)
+  VALUES (%s, %s, (SELECT AlbumId FROM Album WHERE AlbumName = %s), %s, %s)
   """
   for _, row in songs_data.iterrows():
-    cursor.execute(insert_query, (row['SongTitle'], row['ArtistName'], row['AlbumName'], row['Time']))
+    print("run")
+    print(row)
+    cursor.execute(insert_query, (row['SongTitle'], row['ArtistName'], row['AlbumName'], row['Time'], row['Rating']))
   connection.commit()
 
 except mysql.connector.Error as err:

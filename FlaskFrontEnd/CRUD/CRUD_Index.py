@@ -54,3 +54,35 @@ def UpdateBig():
 
 def DeleteBig():
     pass
+
+def getAverageRating():
+    #get the average rating from the database
+    sql = """   
+    SELECT Album.AlbumName, Album.ArtistName, AVG(Song.Rating) AS AverageRating
+    FROM Song
+    INNER JOIN Album ON Song.AlbumId = Album.AlbumId
+    GROUP BY Album.AlbumName, Album.ArtistName
+    HAVING AVG(Song.Rating) > 1
+    ORDER BY AverageRating DESC
+    LIMIT 5;
+    """
+    mycursor.execute(sql)
+    myresult = mycursor.fetchall()
+    return myresult
+
+def artistWithHighestSongAverage():
+    sql = """
+        SELECT
+            ArtistName,
+            AVG(Rating) AS AverageSongRating
+        FROM
+            Song
+        GROUP BY
+            ArtistName
+        ORDER BY
+            AverageSongRating DESC
+        LIMIT 1;
+    """
+    mycursor.execute(sql)
+    myresult = mycursor.fetchall()
+    return myresult

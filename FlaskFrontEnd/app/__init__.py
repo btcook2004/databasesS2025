@@ -5,8 +5,10 @@ import CRUD.CRUD_Artist as CRUD_Artist
 import CRUD.CRUD_Genre as CRUD_Genre
 import CRUD.CRUD_Index as CRUD_Index
 import app.clearTables as CT
+import CRUD.recommendation as recom
 app = Flask(__name__)
 searchResults = []
+recommendationResults = []
 
 
 @app.route('/')
@@ -14,7 +16,10 @@ def index():
    # do everything needed to insert a song with album, artist, genre, etc.
    BigTable = CRUD_Index.ReadBig();
    averageSongLength = CRUD_Index.getAverageSong()
-   return render_template('index.html', bigTable=BigTable, averageSongLength=averageSongLength)
+   AverageRating = CRUD_Index.getAverageRating()
+   BestArtistSongs = CRUD_Index.artistWithHighestSongAverage()
+   # print(AverageRating)
+   return render_template('index.html', bigTable=BigTable, averageSongLength=averageSongLength, albumsWithHighestAvgRatings=AverageRating, bestArtistSongs=BestArtistSongs)
 
 @app.route('/clearTables')
 def clear():
@@ -153,22 +158,18 @@ def genres():
 @app.route('/create_genre', methods=['POST'])
 def create_genre():
    GenreName = request.form['genreName']
-   AlbumId = request.form['albumId']
-   ArtistName = request.form['artistName']
    SongId = request.form['songId']
 
-   CRUD_Genre.CreateGenre(GenreName, AlbumId, ArtistName, SongId)
+   CRUD_Genre.CreateGenre(GenreName, SongId)
    return redirect('/genres')
 
 @app.route('/update_genre', methods=['POST'])
 def update_genre():
    GenreId = request.form['genreId']
    GenreName = request.form['genreName']
-   AlbumId = request.form['albumId']
-   ArtistName = request.form['artistName']
    SongId = request.form['songId']
 
-   CRUD_Genre.UpdateGenre(GenreId, GenreName, AlbumId, ArtistName, SongId)
+   CRUD_Genre.UpdateGenre(GenreId, GenreName, SongId)
    return redirect('/genres')
 
 @app.route('/delete_genre', methods=['POST'])
@@ -176,4 +177,22 @@ def delete_genre():
    GenreId = request.form['genreId']
    CRUD_Genre.DeleteGenre(GenreId)
    return redirect('/genres')
+
+@app.route('/recommendations')
+def recommendations():
+   return render_template('recommendations.html', recommendations = recommendationResults)
+
+
+@app.route('/recommendations', methods=['POST'])
+def recommendations_post():
+   # Placeholder for recommendations logic
+   id1 = request.form['songId1']
+   id2 = request.form['songId2']
+   id3 = request.form['songId3']
+   id4 = request.form['songId4']
+   id5 = request.form['songId5']
+   global recommendationResults
+   recommendationResults = recom.getRecommendations(id1, id2, id3, id4, id5)
+   # print(recommendationResults)
+   return render_template('recommendations.html', recommendations=recommendationResults)
 
